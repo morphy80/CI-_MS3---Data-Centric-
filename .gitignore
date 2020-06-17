@@ -1,0 +1,5 @@
+env.py
+.flaskenv
+__pycache__/
+*.py[cod]
+.vscode
