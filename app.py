@@ -1,11 +1,11 @@
 import os
 from flask import Flask
 from flask_pymongo import PyMongo
-
-if os.path.exists("env.py"):
+from os import path
+if path.exists("env.py"):
     import env
 
-
+# Define the app, and set the MONGO_URI secret key
 app = Flask(__name__)
 
 
