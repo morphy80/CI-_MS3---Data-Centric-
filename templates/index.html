@@ -1,0 +1,25 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+        {% for movie in movies %}
+            {{movie.title}}
+            {{movie.genres}}
+            {{movie.year}}
+            {{movie.rating_imdb}}
+            {{movie.runtime}}
+            {{movie.director}}
+            {{movie.writter}}
+            {{movie.stars_cast}}
+            {{movie.synopsis}}
+            {{movie.language}}
+            {{movie.img_src}}
+            {{movie.author}}
+            {{movie.date_added}}
+            {{movie.date_updated}}
+            {{movie.views}}
+            {{movie.user_favs}}
+        {% endfor %}
+    </body>
+</html>

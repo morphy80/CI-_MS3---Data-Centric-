@@ -1,6 +1,7 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
     import env
@@ -18,8 +19,9 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-def hello():
-    return 'Hello World ... this is a new app'
+@app.route('/index.html')
+def home():
+    return render_template("index.html", movies=mongo.db.movies.find())
 
 
 if __name__ == '__main__':
