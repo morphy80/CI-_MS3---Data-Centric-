@@ -1,8 +1,6 @@
-<html>
-    <head>
-    
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
+
         {% for movie in movies %}
             {{movie.title}}
             {{movie.genres}}
@@ -21,5 +19,5 @@
             {{movie.views}}
             {{movie.user_favs}}
         {% endfor %}
-    </body>
-</html>
+        
+{% endblock %}
