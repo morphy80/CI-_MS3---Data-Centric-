@@ -8,13 +8,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a title="Home" href="{{ url_for('home') }}" class="brand-logo">
+                   <!-- <img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Movie-DB Logo" lazyload="on">Movie-DB --> 
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="fas fa-bars material-icons" aria-hidden="true"></i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
+                    <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <body>
         {% block content %}
         {% endblock %}
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>
 </html>
