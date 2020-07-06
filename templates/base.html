@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     </head>
     <header>
         <nav>
@@ -21,7 +22,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
-                    <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li>
+                    <!-- <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li> -->
                 </ul>
             </div>
         </nav>
@@ -34,6 +35,22 @@
     <body>
         {% block content %}
         {% endblock %}
+    <!--Footer-->
+      <footer class="page-footer">
+         <div class="footer-copyright">
+            <div class="container">
+               &copy; Shades Studio
+               <!--Feedback form with succes and error messages-->
+               <a class="waves-effect waves-light btn-small right  modal-trigger" href="#modal1" id="btn-footer">
+               <i class="material-icons left"> message </i>Send feedback
+               </a>
+               <a href="https://github.com/morphy80" target="_blank" rel="noopener"
+                  class="waves-effect waves-light btn-small right" id="btn-footer2">
+               <i class="material-icons left"> code </i>Visit My GitHub
+               </a>
+            </div>
+         </div>
+      </footer>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
