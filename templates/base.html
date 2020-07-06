@@ -17,9 +17,7 @@
                 <a title="Home" href="{{ url_for('home') }}" class="brand-logo">
                    <img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Movie-DB Logo" lazyload="on">Movie-DB 
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                    <i class="fas fa-bars material-icons" aria-hidden="true"></i>
-                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
@@ -27,6 +25,11 @@
                 </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">search</a></li>
+            <li><a href="{{ url_for('get_categories') }}">categories</a></li>
+            <li><a href="{{ url_for('home') }}">refresh</a></li>
+        </ul>
     </header>
     <body>
         {% block content %}
