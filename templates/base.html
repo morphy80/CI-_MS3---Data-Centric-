@@ -1,59 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>{% block title %}{% endblock %}Movie-DB</title>
-        <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    </head>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a title="Home" href="{{ url_for('home') }}" class="brand-logo">
-                   <img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Movie-DB Logo" lazyload="on">Movie-DB 
-                </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
-                    <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
-                    <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">search</a></li>
-            <li><a href="{{ url_for('get_categories') }}">categories</a></li>
-            <!-- <li><a href="{{ url_for('home') }}">refresh</a></li> -->
-        </ul>
-    </header>
-    <body>
-        {% block content %}
-        {% endblock %}
+<head>
+    <title>{% block title %}{% endblock %}Movies-DB</title>
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#212529">
+    <meta name="keywords" content="movies, series, cinema">
+    <meta name="author" content="Shades Studio">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+</head>
+<!-- <header>
+    <nav>
+        <div class="nav-wrapper">
+            <a title="Home" href="{{ url_for('home') }}" class="brand-logo">
+                <img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Movies-DB Logo" lazyload="on">Movies-DB
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
+                <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
+                <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('home') }}">search</a></li>
+        <li><a href="{{ url_for('get_categories') }}">categories</a></li>
+        
+</ul>
+</header> -->
+
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='img/logo.ico') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Movies-DB
+    </a>
+</nav>
+
+
+<body>
+    {% block content %} {% endblock %}
     <!--Footer-->
-      <footer class="page-footer">
-         <div class="footer-copyright">
-            <div class="container">
-               &copy; Shades Studio
-               <!--Feedback form with succes and error messages-->
-               <a class="waves-effect waves-light btn-small right  modal-trigger" href="#modal1" id="btn-footer">
-               <i class="material-icons left"> message </i>Send feedback
-               </a>
-               <a href="https://github.com/morphy80" target="_blank" rel="noopener"
-                  class="waves-effect waves-light btn-small right" id="btn-footer2">
-               <i class="material-icons left"> code </i>Visit My GitHub
-               </a>
-            </div>
-         </div>
-      </footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    </body>
+                <!-- footer list -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <h6 class="footer__title">Resources</h6>
+                    <ul class="footer__list">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="pricing.html">Pricing Plan</a></li>
+                        <li><a href="faq.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <!-- end footer list -->
+
+                <!-- footer list -->
+                <div class="col-12 col-sm-4 col-md-3">
+                    <h6 class="footer__title">Account</h6>
+                    <ul class="footer__list">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Watchlist</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">User Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- footer copyright -->
+            <div class="col-12">
+                <div class="footer__copyright">
+                    <ul class="footer__social">
+                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.google.com/" target="_blank" rel="noopener"><i
+                                    class="fa fa-google"></i></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank" rel="noopener"><i
+                                    class="fa fa-twitter"></i></a></li>
+                    </ul>
+                    <small>© 2020 Movies-DB. Create by <a
+                            href="https://github.com/morphy80/CI_MS3---Data-Centric---Movies-DB" target="_blank">Shades
+                            Studio MS3</a></small>
+
+                    <ul>
+                        <li><a href="privacy.html">Terms of Use</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- end footer copyright -->
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!---SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
 </html>
