@@ -1,9 +1,17 @@
+/*----- @imports -----*/
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Amatic SC', cursive;
   }
 
   main {
     flex: 1 0 auto;
   }
+
+nav .sidenav-trigger {
+    float: right !important;
+}
