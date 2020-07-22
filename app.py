@@ -39,6 +39,5 @@ def render_categories(category_name):
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=True)
+    app.run(host=os.getenv("IP", "0.0.0.0"),
+            port=int(os.getenv("PORT", "5000")), debug=True)
