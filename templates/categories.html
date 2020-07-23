@@ -1,16 +1,15 @@
-{% extends 'base.html'%}
-{% block content %}
+{% extends 'base.html'%} {% block content %}
 <!--For loop to display category names-->
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="categories">Categories</button>
 <div class="row">
-   <h3>Categories</h3>
-   <ul class="collapsible" data-collapsible="accordion">
-      {% for category in categories %}
-      <li>
-         <div class="task_header">
-            <strong>{{category.genres}}</strong>
-         </div>
-      </li>
-      {% endfor %}
-   </ul>
+    <ul class="collapse multi-collapse" id="categories">
+        {% for category in categories %}
+        <li>
+            <div class="task_header">
+                <strong>{{category.genres}}</strong>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

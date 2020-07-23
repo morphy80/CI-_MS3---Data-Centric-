@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/index.html')
-def home():
+def index():
     return render_template("index.html", movies=mongo.db.movies.find())
 
 
@@ -30,12 +30,22 @@ def get_categories():
                            categories=mongo.db.categories.find())
 
 
-@app.route('/render_categories/<genres>')
-def render_categories(category_name):
-    all_categories = list(mongo.db.categories.find())
-    return render_template(
-        'rendercategories.html',
-        categories=all_categories)
+# ---- Help ---- #
+@ app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+
+# ---- ERRORS ----- #
+
+@app.errorhandler(404)
+def user_error(error):
+    return render_template('errors/404.html'), 404
+
+
+@app.route('/<path:path>')
+def path_error(path):
+    return render_template("errors/404.html"), 404
 
 
 if __name__ == '__main__':

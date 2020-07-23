@@ -18,83 +18,80 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
-<!-- <header>
-    <nav>
-        <div class="nav-wrapper">
-            <a title="Home" href="{{ url_for('home') }}" class="brand-logo">
-                <img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Movies-DB Logo" lazyload="on">Movies-DB
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}"><i class="material-icons">search</i></a></li>
-                <li><a href="{{ url_for('get_categories') }}"><i class="material-icons">view_module</i></a></li>
-                <li><a href="{{ url_for('home') }}"><i class="material-icons">refresh</i></a></li>
-            </ul>
-        </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}">search</a></li>
-        <li><a href="{{ url_for('get_categories') }}">categories</a></li>
-        
-</ul>
-</header> -->
 
 <body>
-    <header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='img/logo.ico') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Movies-DB
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Catalog
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header_content">
+                        <!-- header logo -->
+                        <a class="navbar-brand" href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='img/favicon.ico') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Movies-DB
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Movie List</a>
-                            <a class="dropdown-item" href="#">Movie Grid</a>
-                            <a class="dropdown-item" href="#">Movie Detail</a>
-                            <a class="dropdown-item" href="#">Watch Later</a>
+                        <!-- end header logo -->
+
+                        <!-- header nav -->
+                        <ul class="header_nav">
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+
+                            <!-- dropdown -->
+                            <li class="header_nav-item">
+                                <a class="dropdown-toggle header_nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
+
+                                <ul class="dropdown-menu header_dropdown-menu" aria-labelledby="dropdownMenuCatalog">
+                                    <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
+                                    <li><a href="details.html">Movie Detail</a></li>
+                                </ul>
+                            </li>
+                            <!-- end dropdown -->
+
+                            <li class="header_nav-item">
+                                <a href="{{ url_for('faq') }}" class="header_nav-link">Help</a>
+                            </li>
+
+                            <!-- dropdown -->
+                            <li class="dropdown header_nav-item hide">
+                                <a class="dropdown-toggle header_nav-link header_nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-caret-square-down"></i></a>
+
+                                <ul class="dropdown-menu header_dropdown-menu hide" aria-labelledby="dropdownMenuMore" x-placement="bottom-start">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="profile.html">My Profile</a></li>
+                                    <li><a href="signin.html">Sign In</a></li>
+                                    <li><a href="signup.html">Sign Up</a></li>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="contacts.html">Contacts</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                </ul>
+                            </li>
+                            <!-- end dropdown -->
+                        </ul>
+                        <!-- end header nav -->
+
+                        <!-- header auth -->
+                        <div class="header_auth">
+                            <form action="#" class="header_search">
+                                <input class="header_search-input" type="text" placeholder="Search...">
+                                <button class="header_search-button" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="header_search-close" type="button">
+                                    <i class="far fa-window-close"></i>
+                                </button>
+                            </form>
+
+                            <a href="signin.html" class="header_sign-in">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>sign in</span>
+                            </a>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">About</a>
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Sign In</a>
-                            <a class="dropdown-item" href="#">Sign Up</a>
-                            <a class="dropdown-item" href="#">Reviews</a>
-                            <a class="dropdown-item" href="#">Privacy Policy</a>
-                            <a class="dropdown-item" href="#">404 Page</a>
-                            <!-- <a class="dropdown-item" href="#">Coming Soon</a> -->
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                </ul>
+                        <!-- end header auth -->
+                        <!-- header menu btn -->
+
+                    </div>
+                </div>
             </div>
-
-
-        </nav>
-        <!-- <div class="top-search">
-            <select>
-                <option value="united">TV show</option>
-                <option value="saab">Others</option>
-            </select>
-            <input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-        </div> -->
+        </div>
     </header>
     <!---CONTENT-->
     <div class="container">
@@ -102,61 +99,83 @@
     </div>
 
     <!--Footer-->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-
-                <!-- footer list -->
-                <div class="col-6 col-sm-4 col-md-3">
-                    <h6 class="footer_title">Resources</h6>
-                    <ul class="footer_list">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="pricing.html">Pricing Plan</a></li>
-                        <li><a href="faq.html">Help Center</a></li>
-                    </ul>
-                </div>
-                <!-- end footer list -->
-
-                <!-- footer list -->
-                <div class="col-12 col-sm-4 col-md-3">
-                    <h6 class="footer_title">Account</h6>
-                    <ul class="footer_list">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Watchlist</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">User Guide</a></li>
-                    </ul>
+    <footer class="footer bg-dark">
+        <!-- <img src="{{ url_for('static', filename='img/ft-bg.jpg') }}" alt="footer background"> -->
+        <div class="footer-widget-area ptb100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="widget widget-links">
+                            <h4 class="widget-title">Useful Links</h4>
+                            <ul class="general-listing">
+                                <li><a href="#">About Movies-DB</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">My Profile</a></li>
+                                <li><a href="#">Watch List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="widget widget-blog">
+                            <h4 class="widget-title">Latest News</h4>
+                            <ul class="blog-posts">
+                                <li><a href="#">blog post 1</a><small>januar 13, 2020</small></li>
+                                <li><a href="#">blog post 2</a><small>januar 13, 2020</small></li>
+                                <li><a href="#">blog post 3</a><small>januar 13, 2020</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="widget widget-social">
+                            <h4 class="widget-title">Follow Us</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <ul class="footer_social d-flex justify-content-between">
+                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.google.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-google"></i></a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank" rel="noopener"><i
+                                            class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your email...">
+                        </form>
+                        <a href="#" class="btn btn-danger">Subscribe now <i class="far fa-hand-point-up"></i></a>
+                    </div>
                 </div>
             </div>
-
-            <!-- footer copyright -->
-            <div class="col-12">
-                <div class="footer_copyright">
-                    <ul class="footer_social">
-                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
-                                    class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.google.com/" target="_blank" rel="noopener"><i
-                                    class="fa fa-google"></i></a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
-                                    class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://twitter.com/" target="_blank" rel="noopener"><i
-                                    class="fa fa-twitter"></i></a></li>
-                    </ul>
-                    <small>© 2020 Movies-DB. Create by <a
-                            href="https://github.com/morphy80/CI_MS3---Data-Centric---Movies-DB" target="_blank">Shades
-                            Studio MS3</a></small>
-
-                    <ul>
-                        <li><a href="privacy.html">Terms of Use</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-
+        </div>
+        <!-- Footer copyright -->
+        <div class="footer-copyright-area ptb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="links">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">About Us</a></li>
+                                    <li class="list-inline-item"><a href="{{ url_for('faq') }}">Help</a></li>
+                                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            <small>© 2020 Movies-DB. Create by <a
+                                    href="https://github.com/morphy80/CI_MS3---Data-Centric---Movies-DB"
+                                    target="_blank">Shades
+                                    Studio MS3</a></small>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- end footer copyright -->
         </div>
     </footer>
-    <!-- end footer -->
+
     <!---SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
