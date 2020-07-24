@@ -101,7 +101,7 @@
     <!--Footer-->
     <footer class="footer bg-dark">
         <!-- <img src="{{ url_for('static', filename='img/ft-bg.jpg') }}" alt="footer background"> -->
-        <div class="footer-widget-area ptb100">
+        <div class="footer-widget-area ptb60">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12">
@@ -128,30 +128,55 @@
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="widget widget-social">
                             <h4 class="widget-title">Follow Us</h4>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <ul class="footer_social d-flex justify-content-between">
-                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://www.google.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-google"></i></a></li>
-                                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/" target="_blank" rel="noopener"><i
-                                            class="fa fa-twitter"></i></a></li>
+                            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                            <ul class="social-btns">
+                                <li>
+                                    <a href="http://www.facebook.com" target="_blank" rel="noopener" class="social-margin">
+                                        <div class="social-icon facebook">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://twitter.com/" target="_blank" rel="noopener" class="social-margin">
+                                        <div class="social-icon twitter">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/" target="_blank" rel="noopener" class="social-margin">
+                                        <div class="social-icon google">
+                                            <i class="fa fa-google" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://youtube.com/" target="_blank" rel="noopener" class="social-margin">
+                                        <div class="social-icon youtube">
+                                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h4>Newsletter</h4>
-                        <p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
+                        <div class="widget widget-newsletter"></div>
+                        <h4 class="widget-title">Newsletter</h4>
+                        <!-- <p>Subscribe to our newsletter system now <br> to get latest news from us.</p> -->
                         <form action="#">
-                            <input type="text" placeholder="Enter your email...">
+                            <div class="form">
+                                <!-- <label for="formControlEmail">Email address</label> -->
+                                <input type="email" class="form-control" id="formControlEmail" placeholder="name@example.com">
+                            </div>
                         </form>
                         <a href="#" class="btn btn-danger">Subscribe now <i class="far fa-hand-point-up"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Footer copyright -->
         <div class="footer-copyright-area ptb30">
             <div class="container">
@@ -165,10 +190,10 @@
                                     <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>
-                            <small>© 2020 Movies-DB. Create by <a
-                                    href="https://github.com/morphy80/CI_MS3---Data-Centric---Movies-DB"
-                                    target="_blank">Shades
-                                    Studio MS3</a></small>
+                            <div class="copyright ml-auto">
+                                © 2020 Movies-DB MS3. Create by
+                                <a href="https://github.com/morphy80/CI_MS3---Data-Centric---Movies-DB" target="_blank">Alex Apostoiu</a>
+                            </div>
                         </div>
                     </div>
                 </div>
